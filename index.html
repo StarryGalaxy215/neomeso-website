@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>neomeso.tech - 欢迎来到我的网站</title>
+    <title>Neomeso - 生物医学工程与智能新技术</title>
     <style>
         * {
             margin: 0;
@@ -12,73 +12,152 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            min-height: 100vh;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .hero {
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: #fff;
-        }
-
-        .container {
+            padding: 40px 20px;
             text-align: center;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            max-width: 600px;
-            width: 90%;
+            background: radial-gradient(ellipse at top, rgba(102, 126, 234, 0.3) 0%, transparent 50%),
+                        radial-gradient(ellipse at bottom right, rgba(118, 75, 162, 0.2) 0%, transparent 50%);
         }
 
-        h1 {
-            font-size: 3em;
+        .logo {
+            font-size: 4em;
+            font-weight: bold;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             animation: fadeInDown 1s ease-out;
+            letter-spacing: 8px;
         }
 
-        .subtitle {
+        .tagline {
             font-size: 1.5em;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease-out 0.3s both;
+            color: #a0a0ff;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-out 0.2s both;
         }
 
-        .features {
+        .intro-box {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px 50px;
+            max-width: 800px;
+            margin-bottom: 50px;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .intro-title {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #e0e0ff;
+        }
+
+        .intro-text {
+            font-size: 1.1em;
+            color: #c0c0e0;
+            line-height: 1.8;
+        }
+
+        .team-focus {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin-bottom: 50px;
             animation: fadeInUp 1s ease-out 0.6s both;
         }
 
-        .feature {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 15px 25px;
-            border-radius: 10px;
-            font-size: 0.9em;
-            transition: transform 0.3s ease;
+        .focus-item {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+            min-width: 200px;
         }
 
-        .feature:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.2);
+        .focus-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(102, 126, 234, 0.5);
+        }
+
+        .focus-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .focus-title {
+            font-size: 1.2em;
+            color: #e0e0ff;
+            margin-bottom: 10px;
+        }
+
+        .focus-desc {
+            font-size: 0.9em;
+            color: #a0a0c0;
+        }
+
+        .tech-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .tech-tag {
+            background: rgba(102, 126, 234, 0.2);
+            border: 1px solid rgba(102, 126, 234, 0.4);
+            border-radius: 25px;
+            padding: 10px 25px;
+            font-size: 0.9em;
+            color: #c0c0ff;
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            background: rgba(102, 126, 234, 0.4);
+            transform: scale(1.05);
         }
 
         .footer {
-            margin-top: 40px;
-            font-size: 0.85em;
-            opacity: 0.8;
-            animation: fadeIn 1s ease-out 0.9s both;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 1s ease-out 1s both;
         }
 
-        .emoji {
-            font-size: 1.2em;
-            margin-right: 5px;
+        .footer p {
+            color: #808090;
+            font-size: 0.9em;
+        }
+
+        .domain-hint {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 0.8em;
+            color: #808090;
         }
 
         @keyframes fadeInDown {
@@ -113,42 +192,79 @@
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
+            .logo {
+                font-size: 2.5em;
+                letter-spacing: 4px;
             }
-            .subtitle {
-                font-size: 1.2em;
+            .tagline {
+                font-size: 1.1em;
             }
-            .features {
-                flex-direction: column;
+            .intro-box {
+                padding: 25px 20px;
+            }
+            .intro-title {
+                font-size: 1.4em;
+            }
+            .intro-text {
+                font-size: 1em;
+            }
+            .focus-item {
+                padding: 20px 25px;
+                min-width: 150px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🎉 neomeso.tech</h1>
-        <p class="subtitle">欢迎来到我的个人网站</p>
+    <div class="hero">
+        <div class="logo">NEOMESO</div>
+        <p class="tagline">生物医学工程 × 智能新技术</p>
         
-        <div class="features">
-            <div class="feature">
-                <span class="emoji">🚀</span> 快速部署
+        <div class="intro-box">
+            <h2 class="intro-title">关于我们</h2>
+            <p class="intro-text">
+                Neomeso 是一个专注于<strong>生物医学工程</strong>以及<strong>智能新技术</strong>的<br>
+                <strong>两栖 IP 团队</strong>。<br><br>
+                我们致力于探索生命科学与前沿技术的深度融合，<br>
+                用创新技术推动医疗健康领域的变革与发展。
+            </p>
+        </div>
+
+        <div class="team-focus">
+            <div class="focus-item">
+                <div class="focus-icon">🧬</div>
+                <div class="focus-title">生物医学工程</div>
+                <div class="focus-desc">医疗器械 · 生物材料<br>组织工程 · 诊断技术</div>
             </div>
-            <div class="feature">
-                <span class="emoji">🔒</span> 安全 HTTPS
+            <div class="focus-item">
+                <div class="focus-icon">🤖</div>
+                <div class="focus-title">智能新技术</div>
+                <div class="focus-desc">人工智能 · 机器学习<br>智能硬件 · 数据分析</div>
             </div>
-            <div class="feature">
-                <span class="emoji">🌍</span> 全球 CDN
-            </div>
-            <div class="feature">
-                <span class="emoji">💯</span> 永久免费
+            <div class="focus-item">
+                <div class="focus-icon">💡</div>
+                <div class="focus-title">创新 IP</div>
+                <div class="focus-desc">技术研发 · 专利布局<br>产品转化 · 产业合作</div>
             </div>
         </div>
 
-        <div class="footer">
-            <p>Powered by Cloudflare Pages</p>
-            <p style="margin-top: 10px;">Hosted on Cloudflare Network</p>
+        <div class="tech-tags">
+            <span class="tech-tag">AI 医疗</span>
+            <span class="tech-tag">生物传感</span>
+            <span class="tech-tag">智能诊断</span>
+            <span class="tech-tag">可穿戴设备</span>
+            <span class="tech-tag">数字健康</span>
+            <span class="tech-tag">精准医疗</span>
         </div>
+
+        <div class="footer">
+            <p>© 2026 Neomeso Team. All rights reserved.</p>
+            <p style="margin-top: 10px;">neomeso.tech</p>
+        </div>
+    </div>
+
+    <div class="domain-hint">
+        Powered by Cloudflare Pages
     </div>
 </body>
 </html>
