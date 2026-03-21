@@ -46,118 +46,86 @@
         .tagline {
             font-size: 1.5em;
             color: #a0a0ff;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             animation: fadeInUp 1s ease-out 0.2s both;
         }
 
-        .intro-box {
+        .nav-cards {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .nav-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             padding: 40px 50px;
-            max-width: 800px;
-            margin-bottom: 50px;
-            animation: fadeInUp 1s ease-out 0.4s both;
-        }
-
-        .intro-title {
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            color: #e0e0ff;
-        }
-
-        .intro-text {
-            font-size: 1.1em;
-            color: #c0c0e0;
-            line-height: 1.8;
-        }
-
-        .team-focus {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-bottom: 50px;
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-
-        .focus-item {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 30px 40px;
             text-align: center;
             transition: all 0.3s ease;
-            min-width: 200px;
+            cursor: pointer;
+            min-width: 280px;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
-        .focus-item:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.12);
+        .nav-card:hover {
+            transform: translateY(-15px);
+            background: rgba(255, 255, 255, 0.1);
             border-color: rgba(102, 126, 234, 0.5);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
         }
 
-        .focus-icon {
-            font-size: 3em;
+        .nav-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        .nav-title {
+            font-size: 1.6em;
+            color: #e0e0ff;
             margin-bottom: 15px;
         }
 
-        .focus-title {
-            font-size: 1.2em;
-            color: #e0e0ff;
-            margin-bottom: 10px;
-        }
-
-        .focus-desc {
-            font-size: 0.9em;
+        .nav-desc {
+            font-size: 1em;
             color: #a0a0c0;
+            line-height: 1.6;
         }
 
-        .tech-tags {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            animation: fadeInUp 1s ease-out 0.8s both;
-        }
-
-        .tech-tag {
-            background: rgba(102, 126, 234, 0.2);
-            border: 1px solid rgba(102, 126, 234, 0.4);
-            border-radius: 25px;
-            padding: 10px 25px;
-            font-size: 0.9em;
-            color: #c0c0ff;
+        .nav-arrow {
+            margin-top: 25px;
+            font-size: 1.2em;
+            color: #667eea;
+            opacity: 0;
+            transform: translateY(10px);
             transition: all 0.3s ease;
         }
 
-        .tech-tag:hover {
-            background: rgba(102, 126, 234, 0.4);
-            transform: scale(1.05);
+        .nav-card:hover .nav-arrow {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .footer {
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            animation: fadeIn 1s ease-out 1s both;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(transparent, rgba(0,0,0,0.3));
+            animation: fadeIn 1s ease-out 0.6s both;
         }
 
         .footer p {
             color: #808090;
             font-size: 0.9em;
-        }
-
-        .domain-hint {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-size: 0.8em;
-            color: #808090;
         }
 
         @keyframes fadeInDown {
@@ -199,18 +167,19 @@
             .tagline {
                 font-size: 1.1em;
             }
-            .intro-box {
-                padding: 25px 20px;
+            .nav-cards {
+                flex-direction: column;
+                gap: 25px;
             }
-            .intro-title {
+            .nav-card {
+                padding: 30px 25px;
+                min-width: auto;
+            }
+            .nav-title {
                 font-size: 1.4em;
             }
-            .intro-text {
-                font-size: 1em;
-            }
-            .focus-item {
-                padding: 20px 25px;
-                min-width: 150px;
+            .footer {
+                position: relative;
             }
         }
     </style>
@@ -220,51 +189,32 @@
         <div class="logo">NEOMESO</div>
         <p class="tagline">生物医学工程 × 智能新技术</p>
         
-        <div class="intro-box">
-            <h2 class="intro-title">关于我们</h2>
-            <p class="intro-text">
-                Neomeso 是一个专注于<strong>生物医学工程</strong>以及<strong>智能新技术</strong>的<br>
-                <strong>两栖 IP 团队</strong>。<br><br>
-                我们致力于探索生命科学与前沿技术的深度融合，<br>
-                用创新技术推动医疗健康领域的变革与发展。
-            </p>
-        </div>
-
-        <div class="team-focus">
-            <div class="focus-item">
-                <div class="focus-icon">🧬</div>
-                <div class="focus-title">生物医学工程</div>
-                <div class="focus-desc">医疗器械 · 生物材料<br>组织工程 · 诊断技术</div>
-            </div>
-            <div class="focus-item">
-                <div class="focus-icon">🤖</div>
-                <div class="focus-title">智能新技术</div>
-                <div class="focus-desc">人工智能 · 机器学习<br>智能硬件 · 数据分析</div>
-            </div>
-            <div class="focus-item">
-                <div class="focus-icon">💡</div>
-                <div class="focus-title">创新 IP</div>
-                <div class="focus-desc">技术研发 · 专利布局<br>产品转化 · 产业合作</div>
-            </div>
-        </div>
-
-        <div class="tech-tags">
-            <span class="tech-tag">AI 医疗</span>
-            <span class="tech-tag">生物传感</span>
-            <span class="tech-tag">智能诊断</span>
-            <span class="tech-tag">可穿戴设备</span>
-            <span class="tech-tag">数字健康</span>
-            <span class="tech-tag">精准医疗</span>
+        <div class="nav-cards">
+            <a href="bioengineering.html" class="nav-card">
+                <div class="nav-icon">🧬</div>
+                <div class="nav-title">生物医学工程</div>
+                <div class="nav-desc">医疗器械 · 生物材料<br>神经科学 · 脑电分析</div>
+                <div class="nav-arrow">→ 了解更多</div>
+            </a>
+            
+            <a href="ai.html" class="nav-card">
+                <div class="nav-icon">🤖</div>
+                <div class="nav-title">智能新技术</div>
+                <div class="nav-desc">人工智能 · 机器学习<br>智能硬件 · 数据分析</div>
+                <div class="nav-arrow">→ 了解更多</div>
+            </a>
+            
+            <a href="ip.html" class="nav-card">
+                <div class="nav-icon">💡</div>
+                <div class="nav-title">创新 IP</div>
+                <div class="nav-desc">技术研发 · 专利布局<br>产品转化 · 产业合作</div>
+                <div class="nav-arrow">→ 了解更多</div>
+            </a>
         </div>
 
         <div class="footer">
             <p>© 2026 Neomeso Team. All rights reserved.</p>
-            <p style="margin-top: 10px;">neomeso.tech</p>
         </div>
-    </div>
-
-    <div class="domain-hint">
-        Powered by Cloudflare Pages
     </div>
 </body>
 </html>
