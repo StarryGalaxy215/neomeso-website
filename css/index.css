@@ -1,0 +1,289 @@
+/* 
+ * NeoMeso - 首页样式表
+ * 版本：1.0
+ * 最后更新：2026-03-21
+ */
+
+/* ==================== 全局样式 ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    min-height: 100vh;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* ==================== Hero 区域 ==================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 80px 20px 40px;
+    text-align: center;
+    background: radial-gradient(ellipse at top, rgba(102, 126, 234, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom right, rgba(118, 75, 162, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 20% 30%, rgba(102, 126, 234, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(118, 75, 162, 0.06) 0%, transparent 40%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(102, 126, 234, 0.08) 0%, transparent 50%);
+    animation: ambientGlow1 15s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(118, 75, 162, 0.06) 0%, transparent 50%);
+    animation: ambientGlow2 15s ease-in-out infinite;
+    animation-delay: -7.5s;
+    pointer-events: none;
+}
+
+.logo {
+    font-size: 4em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInDown 1.2s cubic-bezier(0.23, 1, 0.32, 1),
+                shimmer 3s linear infinite;
+    letter-spacing: 8px;
+}
+
+.tagline {
+    font-size: 1.5em;
+    color: #a0a0ff;
+    margin-bottom: 60px;
+    animation: fadeInUp 1.2s cubic-bezier(0.23, 1, 0.32, 1) 0.3s both;
+}
+
+/* ==================== 导航卡片 ==================== */
+.nav-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.nav-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 50px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-width: 280px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.nav-card:hover {
+    transform: translateY(-15px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(102, 126, 234, 0.5);
+    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+}
+
+.nav-icon {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+
+.nav-title {
+    font-size: 1.6em;
+    color: #e0e0ff;
+    margin-bottom: 15px;
+}
+
+.nav-desc {
+    font-size: 1em;
+    color: #a0a0c0;
+    line-height: 1.6;
+}
+
+.nav-arrow {
+    margin-top: 25px;
+    font-size: 1.2em;
+    color: #667eea;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.nav-card:hover .nav-arrow {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==================== 页脚 ==================== */
+.footer {
+    width: 100%;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer p {
+    color: #9090b0;
+    font-size: 0.85em;
+    margin: 8px 0;
+    letter-spacing: 0.5px;
+}
+
+.contact-info {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.contact-info p {
+    color: #a0a0c0;
+    font-size: 0.82em;
+    margin: 6px 0;
+}
+
+.contact-info p.en {
+    color: #8080a0;
+    font-size: 0.78em;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+/* ==================== 动画 ==================== */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes breathe {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.02);
+        opacity: 0.95;
+    }
+}
+
+@keyframes ambientGlow1 {
+    0%, 100% {
+        opacity: 0.15;
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        opacity: 0.2;
+        transform: translate(50px, -30px) scale(1.1);
+    }
+    50% {
+        opacity: 0.18;
+        transform: translate(-20px, 50px) scale(1.05);
+    }
+    75% {
+        opacity: 0.16;
+        transform: translate(30px, 20px) scale(0.95);
+    }
+}
+
+@keyframes ambientGlow2 {
+    0%, 100% {
+        opacity: 0.12;
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        opacity: 0.15;
+        transform: translate(-40px, 40px) scale(1.08);
+    }
+    66% {
+        opacity: 0.1;
+        transform: translate(60px, -20px) scale(0.92);
+    }
+}
+
+/* ==================== 响应式设计 ==================== */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 2.5em;
+    }
+    
+    .tagline {
+        font-size: 1.2em;
+    }
+    
+    .nav-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-card {
+        width: 100%;
+        max-width: 350px;
+    }
+}

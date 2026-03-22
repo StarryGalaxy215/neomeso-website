@@ -3,251 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>创新 IP - Neomeso</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-            min-height: 100vh;
-            color: #fff;
-            line-height: 1.6;
-        }
-
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(15, 12, 41, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .nav-logo {
-            font-size: 1.5em;
-            font-weight: bold;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-decoration: none;
-            letter-spacing: 4px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-link {
-            color: #a0a0ff;
-            text-decoration: none;
-            font-size: 0.95em;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: #fff;
-        }
-
-        .nav-link.active {
-            color: #fff;
-            font-weight: bold;
-        }
-
-        .hero {
-            padding: 140px 20px 60px;
-            text-align: center;
-            background: radial-gradient(ellipse at top, rgba(102, 126, 234, 0.2) 0%, transparent 50%);
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .page-title {
-            font-size: 3em;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeInDown 1s ease-out;
-        }
-
-        .page-subtitle {
-            font-size: 1.3em;
-            color: #a0a0ff;
-            margin-bottom: 60px;
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-
-        .coming-soon {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-            padding: 80px 60px;
-            max-width: 600px;
-            animation: fadeInUp 1s ease-out 0.4s both;
-        }
-
-        .coming-soon-icon {
-            font-size: 5em;
-            margin-bottom: 30px;
-            animation: bounce 2s infinite;
-        }
-
-        .coming-soon-title {
-            font-size: 2.5em;
-            color: #e0e0ff;
-            margin-bottom: 20px;
-        }
-
-        .coming-soon-desc {
-            font-size: 1.1em;
-            color: #a0a0c0;
-            margin-bottom: 40px;
-        }
-
-        .notify-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            border-radius: 25px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .notify-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-        }
-
-        .footer {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: auto;
-        }
-
-        .footer p {
-            color: #808090;
-            font-size: 0.9em;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-bottom: 40px;
-            color: #667eea;
-            text-decoration: none;
-            font-size: 1em;
-            transition: all 0.3s ease;
-        }
-
-        .back-link:hover {
-            color: #a0a0ff;
-            transform: translateX(-5px);
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 15px 20px;
-                flex-direction: column;
-                gap: 15px;
-            }
-            .nav-links {
-                gap: 20px;
-            }
-            .page-title {
-                font-size: 2em;
-            }
-            .coming-soon {
-                padding: 60px 30px;
-            }
-            .coming-soon-title {
-                font-size: 1.8em;
-            }
-            .coming-soon-icon {
-                font-size: 3.5em;
-            }
-        }
-    </style>
+    <title>创新 IP - NeoMeso</title>
+    <link rel="icon" href="resources/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/ip.css">
 </head>
 <body>
     <nav class="navbar">
         <a href="index.html" class="nav-logo">NEOMESO</a>
         <div class="nav-links">
-            <a href="bioengineering.html" class="nav-link">生物医学工程</a>
-            <a href="ai.html" class="nav-link">智能新技术</a>
+            <a href="bioengineering.html" class="nav-link">生物医学</a>
             <a href="ip.html" class="nav-link active">创新 IP</a>
         </div>
     </nav>
 
     <div class="hero">
         <a href="index.html" class="back-link">← 返回首页</a>
+        <h1 class="page-title">创新 IP</h1>
+        <p class="page-subtitle">Intellectual Property | 技术研发 × 产业转化</p>
         
-        <div class="coming-soon">
-            <div class="coming-soon-icon">💡</div>
-            <h1 class="coming-soon-title">敬请期待</h1>
-            <p class="coming-soon-desc">
-                我们正在精心准备精彩内容<br>
-                创新 IP 页面即将上线
-            </p>
-            <a href="index.html" class="notify-btn">返回首页</a>
+        <!-- CuneiForm -->
+        <div class="coming-soon-container">
+            <div class="coming-soon cuneiform-card">
+                <div class="coming-soon-icon">📄</div>
+                <h1 class="coming-soon-title">CuneiForm</h1>
+                <p class="coming-soon-desc">
+                    多功能文档处理工具<br>
+                    PDF Word 双向转换 · 公式识别 · 格式转换
+                </p>
+                <a href="download.html" class="notify-btn">前往</a>
+            </div>
+
+            <!-- 敬请期待 -->
+            <div class="coming-soon">
+                <div class="coming-soon-icon">💡</div>
+                <h1 class="coming-soon-title">敬请期待</h1>
+                <p class="coming-soon-desc">
+                    我们正在精心准备精彩内容<br>
+                    创新 IP 页面即将上线
+                </p>
+                <a href="index.html" class="notify-btn"> 上线提醒</a>
+            </div>
         </div>
     </div>
 
     <footer class="footer">
-        <p>© 2026 Neomeso Team. All rights reserved.</p>
+        <p>© 2026 NeoMeso Team. All rights reserved.</p>
         <p style="margin-top: 10px;">neomeso.tech</p>
     </footer>
 </body>

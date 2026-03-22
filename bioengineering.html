@@ -3,293 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>生物医学工程 - Neomeso</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-            min-height: 100vh;
-            color: #fff;
-            line-height: 1.6;
-        }
-
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(15, 12, 41, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .nav-logo {
-            font-size: 1.5em;
-            font-weight: bold;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-decoration: none;
-            letter-spacing: 4px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-link {
-            color: #a0a0ff;
-            text-decoration: none;
-            font-size: 0.95em;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: #fff;
-        }
-
-        .nav-link.active {
-            color: #fff;
-            font-weight: bold;
-        }
-
-        .hero {
-            padding: 140px 20px 60px;
-            text-align: center;
-            background: radial-gradient(ellipse at top, rgba(102, 126, 234, 0.2) 0%, transparent 50%);
-        }
-
-        .page-title {
-            font-size: 3em;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeInDown 1s ease-out;
-        }
-
-        .page-subtitle {
-            font-size: 1.3em;
-            color: #a0a0ff;
-            margin-bottom: 60px;
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-
-        .section-title {
-            font-size: 2em;
-            text-align: center;
-            margin-bottom: 50px;
-            color: #e0e0ff;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            margin: 15px auto 0;
-        }
-
-        .subteams {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto 80px;
-        }
-
-        .subteam-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px;
-            flex: 1;
-            min-width: 300px;
-            max-width: 500px;
-            transition: all 0.3s ease;
-        }
-
-        .subteam-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(102, 126, 234, 0.5);
-            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
-        }
-
-        .subteam-icon {
-            font-size: 4em;
-            margin-bottom: 20px;
-        }
-
-        .subteam-name {
-            font-size: 2em;
-            color: #e0e0ff;
-            margin-bottom: 15px;
-        }
-
-        .subteam-desc {
-            font-size: 1em;
-            color: #a0a0c0;
-            line-height: 1.8;
-            margin-bottom: 25px;
-        }
-
-        .tech-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .tech-list li {
-            padding: 8px 0;
-            color: #c0c0e0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .tech-list li:last-child {
-            border-bottom: none;
-        }
-
-        .tech-list li::before {
-            content: '▸ ';
-            color: #667eea;
-            margin-right: 8px;
-        }
-
-        .features {
-            max-width: 1200px;
-            margin: 0 auto 80px;
-            padding: 0 20px;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-item {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .feature-item:hover {
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            font-size: 2.5em;
-            margin-bottom: 15px;
-        }
-
-        .feature-title {
-            font-size: 1.2em;
-            color: #e0e0ff;
-            margin-bottom: 10px;
-        }
-
-        .feature-desc {
-            font-size: 0.9em;
-            color: #a0a0c0;
-        }
-
-        .footer {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer p {
-            color: #808090;
-            font-size: 0.9em;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-bottom: 40px;
-            color: #667eea;
-            text-decoration: none;
-            font-size: 1em;
-            transition: all 0.3s ease;
-        }
-
-        .back-link:hover {
-            color: #a0a0ff;
-            transform: translateX(-5px);
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 15px 20px;
-                flex-direction: column;
-                gap: 15px;
-            }
-            .nav-links {
-                gap: 20px;
-            }
-            .page-title {
-                font-size: 2em;
-            }
-            .subteams {
-                flex-direction: column;
-                align-items: center;
-            }
-            .subteam-card {
-                max-width: 100%;
-            }
-        }
-    </style>
+    <title>生物医学工程 - NeoMeso</title>
+    <link rel="icon" href="resources/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/bioengineering.css">
 </head>
 <body>
     <nav class="navbar">
         <a href="index.html" class="nav-logo">NEOMESO</a>
         <div class="nav-links">
-            <a href="bioengineering.html" class="nav-link active">生物医学工程</a>
-            <a href="ai.html" class="nav-link">智能新技术</a>
+            <a href="bioengineering.html" class="nav-link active">生物医学</a>
             <a href="ip.html" class="nav-link">创新 IP</a>
         </div>
     </nav>
@@ -297,70 +19,569 @@
     <div class="hero">
         <a href="index.html" class="back-link">← 返回首页</a>
         <h1 class="page-title">生物医学工程</h1>
-        <p class="page-subtitle">Biomedical Engineering</p>
+        <p class="page-subtitle">Biomedical Engineering | 电气工程 × 神经科学</p>
 
-        <div class="subteams">
-            <div class="subteam-card">
-                <div class="subteam-icon">🧠</div>
-                <h2 class="subteam-name">NabuNeuro</h2>
-                <p class="subteam-desc">
-                    专注于神经科学与脑机接口技术的研发团队，致力于探索大脑奥秘，开发创新的神经科技解决方案。
+        <!-- 次级导航菜单 -->
+        <div class="sub-nav">
+            <a href="#software" class="sub-nav-link active" data-section="software">软件产品</a>
+            <a href="#hardware" class="sub-nav-link" data-section="hardware">硬件产品</a>
+            <a href="#team" class="sub-nav-link" data-section="team">研发团队</a>
+        </div>
+
+        <!-- 软件产品区 -->
+        <div id="software-section" class="content-section active">
+            <h2 class="section-title">软件产品</h2>
+            <div class="products-grid">
+                <div class="product-card" style="grid-column: span 2; max-width: 600px; margin: 0 auto;">
+                    <img src="resources/NabEEG_logo.png" alt="NabuEEG Logo" class="product-logo">
+                    <h3 class="product-name">NabuEEG</h3>
+                    <p class="product-desc">
+                        高精度脑电信号采集与处理系统，融合模拟电路设计与数字信号处理技术。<br>
+                        从前端放大器到后端算法，全栈自研的 EEG 解决方案。
+                    </p>
+                </div>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <!-- 功能模块区 -->
+            <h2 class="section-title">软件功能模块</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-icon">⚡</div>
+                <h3 class="product-name">数据采集</h3>
+                <p class="product-desc">
+                    支持 OpenBCI Cyton/Ganglion 硬件，实时采集 8/16 通道 EEG 信号。
                 </p>
-                <ul class="tech-list">
-                    <li>脑机接口技术</li>
-                    <li>神经信号处理</li>
-                    <li>认知神经科学</li>
-                    <li>神经反馈训练</li>
+                <ul class="product-features">
+                    <li>实时 8/16 通道 EEG 采集</li>
+                    <li>USB Dongle 无线连接</li>
+                    <li>同步采样与数据流传输</li>
+                    <li>10-20 系统电极定位</li>
                 </ul>
             </div>
 
-            <div class="subteam-card">
-                <div class="subteam-icon">⚡</div>
-                <h2 class="subteam-name">NabuEEG</h2>
-                <p class="subteam-desc">
-                    专注于脑电图（EEG）技术与设备研发，提供高精度的脑电信号采集、分析和可视化解决方案。
+            <div class="product-card">
+                <div class="product-icon">🔧</div>
+                <h3 class="product-name">信号预处理</h3>
+                <p class="product-desc">
+                    先进的信号滤波、去噪与特征提取算法，提升 EEG 信号质量。
                 </p>
-                <ul class="tech-list">
-                    <li>EEG 信号采集</li>
-                    <li>实时脑电分析</li>
-                    <li>3D 脑可视化</li>
-                    <li>癫痫检测</li>
-                    <li>注意力训练</li>
-                    <li>睡眠分析</li>
+                <ul class="product-features">
+                    <li>自定义滤波器设计</li>
+                    <li>ICA 盲源分离去伪迹</li>
+                    <li>时域/频域特征提取</li>
+                </ul>
+            </div>
+
+            <div class="product-card">
+                <div class="product-icon">🤖</div>
+                <h3 class="product-name">健康诊断</h3>
+                <p class="product-desc">
+                    机器学习模型分析 EEG 特征，评估大脑健康状态。
+                </p>
+                <ul class="product-features">
+                    <li>癫痫自动检测</li>
+                    <li>注意力评估训练</li>
+                    <li>疲劳状态监测</li>
+                    <li>睡眠质量分析</li>
+                </ul>
+            </div>
+
+            <div class="product-card">
+                <div class="product-icon">📈</div>
+                <h3 class="product-name">可视化</h3>
+                <p class="product-desc">
+                    丰富的可视化工具与文件管理功能，直观展示脑电数据与分析结果。
+                </p>
+                <ul class="product-features">
+                    <li>实时波形图与频谱图</li>
+                    <li>3D 脑成像与拓扑图</li>
+                    <li>脑网络功能连接分析</li>
+                    <li>EDF/BDF/CSV 格式互转</li>
+                </ul>
+            </div>
+
+            <div class="product-card">
+                <div class="product-icon">🎮</div>
+                <h3 class="product-name">认知训练</h3>
+                <p class="product-desc">
+                    基于脑电反馈的认知训练游戏系统。
+                </p>
+                <ul class="product-features">
+                    <li>注意力训练游戏</li>
+                    <li>记忆训练游戏</li>
+                    <li>反应训练游戏</li>
+                    <li>认知能力量化评估</li>
+                </ul>
+            </div>
+
+            <div class="product-card">
+                <div class="product-icon">🔐</div>
+                <h3 class="product-name">用户认证</h3>
+                <p class="product-desc">
+                    完善的用户认证系统与数据管理，支持云端模式。
+                </p>
+                <ul class="product-features">
+                    <li>邮箱注册登录</li>
+                    <li>云端数据存储</li>
+                    <li>通道配置与数据归档</li>
+                    <li>私人健康档案建立</li>
                 </ul>
             </div>
         </div>
 
-        <h2 class="section-title">技术方向</h2>
-        <div class="features">
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <div class="feature-icon"></div>
-                    <div class="feature-title">医疗器械</div>
-                    <div class="feature-desc">研发创新医疗设备<br>提升诊断治疗效果</div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🧪</div>
-                    <div class="feature-title">生物材料</div>
-                    <div class="feature-desc">开发生物相容材料<br>支持组织工程应用</div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">📊</div>
-                    <div class="feature-title">诊断技术</div>
-                    <div class="feature-desc">智能辅助诊断系统<br>提高诊断准确率</div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🎯</div>
-                    <div class="feature-title">精准医疗</div>
-                    <div class="feature-desc">个性化治疗方案<br>精准靶向干预</div>
+        <div class="section-divider"></div>
+
+        <!-- 软件下载区 -->
+        <h2 class="section-title">软件下载</h2>
+        <div class="download-grid">
+            <div class="download-card">
+                <div class="download-icon">⚡</div>
+                <h3 class="download-name">NabuEEG 客户端</h3>
+                <p class="download-version">最新版本 V1.2</p>
+                <p class="download-desc">
+                    高精度脑电数据采集与分析系统，提供完整的 EEG 信号处理解决方案。
+                </p>
+                <ul class="download-features">
+                    <li>✓ 多通道 EEG 信号采集</li>
+                    <li>✓ 实时信号处理与分析</li>
+                    <li>✓ 3D 脑电可视化</li>
+                    <li>✓ 癫痫自动检测</li>
+                    <li>✓ 注意力评估训练</li>
+                    <li>✓ 睡眠质量分析</li>
+                </ul>
+                <a href="nabueeg-download.html" class="download-btn">
+                    📥 立即下载
+                </a>
+                <div class="download-meta">
+                    <span class="meta-item">💾 1.65 GB</span>
+                    <span class="meta-item">🪟 Windows 10/11</span>
+                    <span class="meta-item">🆓 免费</span>
                 </div>
             </div>
+        </div>
+        </div>
+
+        <!-- 硬件产品区 -->
+        <div id="hardware-section" class="content-section">
+            <h2 class="section-title">硬件产品</h2>
+            <p class="section-intro">
+                便携式经颅磁刺激系统，采用先进的线圈设计与电源管理技术，<br>
+                为失眠、抑郁症等神经精神疾病提供非药物干预解决方案。
+            </p>
+            
+            <div class="products-grid">
+                <!-- 超紧凑磁刺激器 -->
+                <div class="product-card">
+                    <div class="product-icon">⚡</div>
+                    <h3 class="product-name">超紧凑磁刺激器</h3>
+                    <p class="product-desc">
+                        便携式 TMS 功率系统，采用高压 DC/DC 模块与高效能量回收电路，支持电池供电。
+                    </p>
+                    <ul class="product-features">
+                        <li>尺寸：20cm × 15cm × 10cm，重量＜2kg</li>
+                        <li>基于 18V 锂电池供电的双有源桥（DAB）升降压拓扑</li>
+                        <li>输出频率 1-40Hz 可调重复双向脉冲</li>
+                        <li>峰值电流达 5kA，毫秒级快速充电</li>
+                        <li>高密度储能电容模块，高效能量管理</li>
+                        <li>支持无线操作，床边治疗/居家干预</li>
+                    </ul>
+                </div>
+
+                <!-- 轻量化磁芯八字线圈 -->
+                <div class="product-card">
+                    <div class="product-icon">🔬</div>
+                    <h3 class="product-name">轻量化磁芯八字线圈</h3>
+                    <p class="product-desc">
+                        基于逆变界元法（IBEM）逆向设计的定制化线圈，实现靶点精准刺激与能效最优化。
+                    </p>
+                    <ul class="product-features">
+                        <li>尺寸：75mm × 50mm，重量约 2kg</li>
+                        <li>双 T 型磁芯结构，HiFlux 合金粉末磁芯（μ=125）</li>
+                        <li>矩形利兹线绕组设计，提升穿透深度与能量效率</li>
+                        <li>最大磁通密度达 1.2Tesla</li>
+                        <li>1100A 脉冲电流产生 97V/m 感应电场</li>
+                        <li>半值深度 1.45cm，精准覆盖前额叶等关键区域</li>
+                        <li>典型治疗模式温升＜8°C，无需主动散热</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <!-- 核心技术展示 -->
+            <h2 class="section-title">核心技术优势</h2>
+            <div class="tech-showcase">
+                <div class="tech-item">
+                    <div class="tech-icon">🔋</div>
+                    <h4>高效便携式储能与脉冲电源技术</h4>
+                    <p>
+                        创新采用双有源桥（DAB）升降压拓扑，在电池电压下实现高效能量变换。
+                        储能电容毫秒级快速充电，支持最高 40Hz 频率输出，为可穿戴 TMS 治疗提供稳定、安全、便携的能量基础。
+                    </p>
+                </div>
+
+                <div class="tech-item">
+                    <div class="tech-icon">️🌙</div>
+                    <h4>多物理场仿真优化与静音设计</h4>
+                    <p>
+                        通过多物理场仿真优化结构布局，典型治疗模式（1Hz，20min）下温升低于 8°C。
+                        无需风扇或液冷等主动散热装置，实现静音、免维护的家用体验，保障长期运行可靠性。
+                    </p>
+                </div>
+
+                <div class="tech-item">
+                    <div class="tech-icon">🏠</div>
+                    <h4>便携化与居家医疗场景突破</h4>
+                    <p>
+                        整体系统重量＜4kg，支持电池供电、无线操作。
+                        打破传统 TMS 设备笨重、固定、依赖市电的局限，推动神经调控技术向基层医疗、社区康复和家庭健康场景延伸。
+                    </p>
+                </div>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <!-- 产品规格参数 -->
+            <h2 class="section-title">产品规格参数</h2>
+            <div class="specs-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>参数项目</th>
+                            <th>规格指标</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>磁刺激器尺寸</td>
+                            <td>20cm × 15cm × 10cm</td>
+                        </tr>
+                        <tr>
+                            <td>磁刺激器重量</td>
+                            <td>＜2kg</td>
+                        </tr>
+                        <tr>
+                            <td>线圈尺寸</td>
+                            <td>75mm × 50mm</td>
+                        </tr>
+                        <tr>
+                            <td>线圈重量</td>
+                            <td>约 2kg</td>
+                        </tr>
+                        <tr>
+                            <td>供电方式</td>
+                            <td>18V 锂电池供电</td>
+                        </tr>
+                        <tr>
+                            <td>输出脉冲频率</td>
+                            <td>1-40Hz 可调</td>
+                        </tr>
+                        <tr>
+                            <td>峰值输出电流</td>
+                            <td>5kA</td>
+                        </tr>
+                        <tr>
+                            <td>最大磁通密度</td>
+                            <td>1.2 Tesla</td>
+                        </tr>
+                        <tr>
+                            <td>感应电场强度</td>
+                            <td>97 V/m @ 1100A</td>
+                        </tr>
+                        <tr>
+                            <td>半值深度</td>
+                            <td>1.45 cm</td>
+                        </tr>
+                        <tr>
+                            <td>温升控制</td>
+                            <td>＜8°C (1Hz, 20min)</td>
+                        </tr>
+                        <tr>
+                            <td>通信方式</td>
+                            <td>USB Dongle 无线连接</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <!-- 制造与质量控制 -->
+            <h2 class="section-title">制造工艺与质量控制</h2>
+            <div class="manufacturing-grid">
+                <div class="manufacturing-card">
+                    <h4>🔌 电源模块制造</h4>
+                    <p>电路板 PCB 打印与元器件焊接（嘉立创 JLCPCB）→ 外壳定制（伟创力 WEdirekt）→ 组装测试（宏电子 HONTEC）</p>
+                </div>
+                <div class="manufacturing-card">
+                    <h4>🧲 线圈模块制造</h4>
+                    <p>线圈绕制与绝缘处理（华磁电子）→ 磁芯加工与装配（深圳磁研）→ 整体封装与测试校准（精测电子）</p>
+                </div>
+                <div class="manufacturing-card">
+                    <h4>✅ 质量控制体系</h4>
+                    <p>符合 ISO 13485 医疗设备质量管理体系标准，全流程质量监控，关键控制点检测，最终出货检验</p>
+                </div>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <!-- 产品购买 -->
+            <h2 class="section-title">产品购买</h2>
+            <div class="purchase-section">
+                <div class="purchase-container">
+                    <div class="purchase-card">
+                        <div class="purchase-icon">🛒</div>
+                        <h3>便携经颅磁刺激器</h3>
+                        <p class="purchase-desc">
+                            创新便携式设计，支持居家使用<br>
+                            无线操作，电池供电，轻便安全
+                        </p>
+                        <a href="#" class="buy-btn" onclick="showContactModal(event)">立即购买</a>
+                    </div>
+
+                    <div class="purchase-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">🔋</div>
+                            <div class="feature-text">
+                                <h4>长续航电池</h4>
+                                <p>18V 锂电池，支持多次治疗</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📱</div>
+                            <div class="feature-text">
+                                <h4>智能控制</h4>
+                                <p>USB Dongle 无线连接，便捷操作</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🛡️</div>
+                            <div class="feature-text">
+                                <h4>安全保障</h4>
+                                <p>符合医疗设备安全标准</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📦</div>
+                            <div class="feature-text">
+                                <h4>全国包邮</h4>
+                                <p>免费配送，售后无忧</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 团队介绍区 -->
+        <div id="team-section" class="content-section">
+        <h2 class="section-title" id="team">研发团队</h2>
+        <div class="team-section">
+            
+            <!-- 团队介绍卡片 -->
+            <div class="team-container">
+                <div class="team-card">
+                    <div class="team-icon">⚡🧠</div>
+                    <h2 class="team-name">NabuNeuro</h2>
+                    <p class="team-slogan">工程思维 × 神经科学 × 技术创新</p>
+                    <p class="team-desc">
+                        由电气工程师与神经科学家组成的跨学科研发团队，<br>
+                        融合电子工程、信号处理与脑科学，开发创新的神经科技解决方案。<br>
+                        用工程思维探索大脑奥秘，以技术创新推动脑科学发展。
+                    </p>
+                    
+                    <div class="team-mission">
+                        <h3 class="mission-title">🎯 我们的使命</h3>
+                        <p class="mission-text">
+                            通过自主研发的高精度脑电采集与分析技术，降低神经科学研究门槛，<br>
+                            让脑机接口技术走进更多实验室和应用场景。
+                        </p>
+                    </div>
+
+                    <div class="team-tech">
+                        <h3 class="tech-section-title">🔬 核心技术领域</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">🧠 脑机接口</span>
+                            <span class="tech-tag">📊 神经信号处理</span>
+                            <span class="tech-tag">⚡ 电路设计</span>
+                            <span class="tech-tag">💻 嵌入式系统</span>
+                            <span class="tech-tag">🔬 生物电信号</span>
+                            <span class="tech-tag">🎯 神经调控技术</span>
+                            <span class="tech-tag">🤖 机器学习</span>
+                            <span class="tech-tag">📈 数据可视化</span>
+                        </div>
+                    </div>
+
+                    <div class="team-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">年研发经验</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">项核心技术</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">服务用户</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 分割线 -->
+            <div class="section-divider"></div>
+
+            <!-- 团队动态 -->
+            <div class="team-news-section">
+                <h2 class="section-title">团队动态</h2>
+                <div class="news-container">
+                    <div class="news-card">
+                        <div class="news-date">2026-03</div>
+                        <h3 class="news-title">NabuEEG V1.2 版本发布</h3>
+                        <p class="news-desc">新增实时信号处理模块，优化 3D 可视化分析功能，提升用户体验。</p>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-date">2026-02</div>
+                        <h3 class="news-title">技术创新突破</h3>
+                        <p class="news-desc">成功研发新一代高精度脑电信号采集技术，信噪比提升 30%。</p>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-date">2026-01</div>
+                        <h3 class="news-title">用户突破 100+</h3>
+                        <p class="news-desc">感谢广大科研工作者的信任与支持，我们将继续提供更优质的产品和服务。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 分割线 -->
+            <div class="section-divider"></div>
+
+            <!-- 团队成员 -->
+            <div class="team-members-section">
+                <h2 class="section-title">团队成员</h2>
+                <div class="members-container">
+                    <div class="members-grid">
+                        <div class="member-card">
+                            <div class="member-avatar">👩‍</div>
+                            <h3 class="member-name">黄俊卿</h3>
+                            <p class="member-role">创始人 & CEO</p>
+                            <p class="member-desc">电气工程专业硕士</p>
+                        </div>
+                        <div class="member-card">
+                            <div class="member-avatar">👩‍</div>
+                            <h3 class="member-name">焦丽鑫</h3>
+                                <p class="member-role">首席科学家</p>
+                                <p class="member-desc">电气工程专业硕士</p>
+                            </div>
+                            <div class="member-card">
+                                <div class="member-avatar">👩</div>
+                                <h3 class="member-name">钱婧怡</h3>
+                                <p class="member-role">技术总监</p>
+                                <p class="member-desc">电气工程专业硕士</p>
+                            </div>
+                            <div class="member-card">
+                                <div class="member-avatar">👩</div>
+                                <h3 class="member-name">李苗苗</h3>
+                                <p class="member-role">硬件负责人</p>
+                                <p class="member-desc">电气工程专业硕士</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </div>
 
     <footer class="footer">
-        <p>© 2026 Neomeso Team. All rights reserved.</p>
-        <p style="margin-top: 10px;">neomeso.tech</p>
+        <p>© 2026 NeoMeso Team. All rights reserved.</p>
     </footer>
+
+    <!-- 联系方式弹窗 -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeContactModal()">&times;</span>
+            <div class="modal-icon">📧</div>
+            <h2 class="modal-title">联系我们</h2>
+            <p class="modal-desc">如需购买产品或咨询详情，请通过以下方式联系我们：</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-text">
+                        <h4>微信 / 电话</h4>
+                        <p>+86 182 6288 7656</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-text">
+                        <h4>电子邮箱</h4>
+                        <p>m202572625@hust.edu.cn</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">💬</div>
+                    <div class="contact-text">
+                        <h4>在线咨询</h4>
+                        <p>工作日 9:00-18:00</p>
+                    </div>
+                </div>
+            </div>
+            <button class="modal-btn" onclick="closeContactModal()">我知道了</button>
+        </div>
+    </div>
+
+    <script>
+        // 次级导航菜单切换功能
+        document.querySelectorAll('.sub-nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // 获取目标部分
+                const targetId = this.getAttribute('data-section');
+                
+                // 移除所有激活状态
+                document.querySelectorAll('.sub-nav-link').forEach(l => l.classList.remove('active'));
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // 添加当前激活状态
+                this.classList.add('active');
+                document.getElementById(`${targetId}-section`).classList.add('active');
+            });
+        });
+
+        // 联系方式弹窗功能
+        function showContactModal(event) {
+            event.preventDefault();
+            const modal = document.getElementById('contact-modal');
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.querySelector('.modal-content').style.opacity = '1';
+                modal.querySelector('.modal-content').style.transform = 'translateY(0)';
+            }, 10);
+        }
+
+        function closeContactModal() {
+            const modal = document.getElementById('contact-modal');
+            modal.querySelector('.modal-content').style.opacity = '0';
+            modal.querySelector('.modal-content').style.transform = 'translateY(-50px)';
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        // 点击弹窗外部关闭
+        window.onclick = function(event) {
+            const modal = document.getElementById('contact-modal');
+            if (event.target === modal) {
+                closeContactModal();
+            }
+        }
+    </script>
 </body>
 </html>

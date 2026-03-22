@@ -3,204 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neomeso - 生物医学工程与智能新技术</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-            min-height: 100vh;
-            color: #fff;
-            line-height: 1.6;
-        }
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-            text-align: center;
-            background: radial-gradient(ellipse at top, rgba(102, 126, 234, 0.3) 0%, transparent 50%),
-                        radial-gradient(ellipse at bottom right, rgba(118, 75, 162, 0.2) 0%, transparent 50%);
-        }
-
-        .logo {
-            font-size: 4em;
-            font-weight: bold;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeInDown 1s ease-out;
-            letter-spacing: 8px;
-        }
-
-        .tagline {
-            font-size: 1.5em;
-            color: #a0a0ff;
-            margin-bottom: 50px;
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-
-        .nav-cards {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            animation: fadeInUp 1s ease-out 0.4s both;
-        }
-
-        .nav-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px 50px;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            min-width: 280px;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        .nav-card:hover {
-            transform: translateY(-15px);
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(102, 126, 234, 0.5);
-            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
-        }
-
-        .nav-icon {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-        }
-
-        .nav-title {
-            font-size: 1.6em;
-            color: #e0e0ff;
-            margin-bottom: 15px;
-        }
-
-        .nav-desc {
-            font-size: 1em;
-            color: #a0a0c0;
-            line-height: 1.6;
-        }
-
-        .nav-arrow {
-            margin-top: 25px;
-            font-size: 1.2em;
-            color: #667eea;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-        }
-
-        .nav-card:hover .nav-arrow {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 20px;
-            text-align: center;
-            background: linear-gradient(transparent, rgba(0,0,0,0.3));
-            animation: fadeIn 1s ease-out 0.6s both;
-        }
-
-        .footer p {
-            color: #808090;
-            font-size: 0.9em;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .logo {
-                font-size: 2.5em;
-                letter-spacing: 4px;
-            }
-            .tagline {
-                font-size: 1.1em;
-            }
-            .nav-cards {
-                flex-direction: column;
-                gap: 25px;
-            }
-            .nav-card {
-                padding: 30px 25px;
-                min-width: auto;
-            }
-            .nav-title {
-                font-size: 1.4em;
-            }
-            .footer {
-                position: relative;
-            }
-        }
-    </style>
+    <title>NeoMeso - 智能新技术</title>
+    <link rel="icon" href="resources/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <div class="hero">
         <div class="logo">NEOMESO</div>
-        <p class="tagline">生物医学工程 × 智能新技术</p>
+        <p class="tagline">“我惧怕死亡，故漂泊荒野。我追寻生命，故穿越黑暗。”</p>
         
         <div class="nav-cards">
             <a href="bioengineering.html" class="nav-card">
                 <div class="nav-icon">🧬</div>
-                <div class="nav-title">生物医学工程</div>
+                <div class="nav-title">生物医学</div>
                 <div class="nav-desc">医疗器械 · 生物材料<br>神经科学 · 脑电分析</div>
-                <div class="nav-arrow">→ 了解更多</div>
-            </a>
-            
-            <a href="ai.html" class="nav-card">
-                <div class="nav-icon">🤖</div>
-                <div class="nav-title">智能新技术</div>
-                <div class="nav-desc">人工智能 · 机器学习<br>智能硬件 · 数据分析</div>
                 <div class="nav-arrow">→ 了解更多</div>
             </a>
             
@@ -213,7 +29,13 @@
         </div>
 
         <div class="footer">
-            <p>© 2026 Neomeso Team. All rights reserved.</p>
+            <p>© 2026 NeoMeso Team. All rights reserved.</p>
+            <div class="contact-info">
+                <p>邮箱：m202572625@hust.edu.cn</p>
+                <p class="en">Email: m202572625@hust.edu.cn</p>
+                <p>地址：中华人民共和国湖北省武汉市珞喻路 1037 号</p>
+                <p class="en">Address: 1037 Luoyu Road, Wuchang District, Wuhan, Hubei Province, P.R. China </p>
+            </div>
         </div>
     </div>
 </body>
