@@ -1,0 +1,349 @@
+/* 
+ * NeoMeso - 公共样式表
+ * 版本：1.0
+ * 最后更新：2026-03-23
+ * 说明：所有页面共享的公共样式
+ */
+
+/* ==================== CSS 变量 ==================== */
+:root {
+    /* 主题颜色 */
+    --color-primary: #667eea;
+    --color-primary-dark: #764ba2;
+    --color-secondary: #a0a0ff;
+    --color-text: #fff;
+    --color-text-muted: #a0a0c0;
+    --color-text-light: #c0c0e0;
+    --color-text-heading: #e0e0ff;
+    --color-text-dim: #808090;
+    
+    /* 背景颜色 */
+    --bg-gradient-start: #0f0c29;
+    --bg-gradient-mid: #302b63;
+    --bg-gradient-end: #24243e;
+    
+    /* 玻璃态效果 */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-bg-hover: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-border-hover: rgba(102, 126, 234, 0.5);
+    --glass-blur: 10px;
+    
+    /* 阴影 */
+    --shadow-sm: 0 4px 20px rgba(102, 126, 234, 0.3);
+    --shadow-md: 0 10px 30px rgba(102, 126, 234, 0.3);
+    --shadow-lg: 0 20px 60px rgba(102, 126, 234, 0.3);
+    --shadow-xl: 0 15px 40px rgba(102, 126, 234, 0.4);
+    
+    /* 间距 */
+    --spacing-xs: 10px;
+    --spacing-sm: 20px;
+    --spacing-md: 30px;
+    --spacing-lg: 40px;
+    --spacing-xl: 60px;
+    
+    /* 圆角 */
+    --radius-sm: 15px;
+    --radius-md: 20px;
+    --radius-lg: 25px;
+    --radius-xl: 30px;
+    
+    /* 字体 */
+    --font-family: 'Microsoft YaHei', 'PingFang SC', 'Segoe UI', sans-serif;
+    
+    /* 过渡 */
+    --transition-fast: 0.3s ease;
+    --transition-normal: 0.5s ease;
+    --transition-slow: 1s ease-out;
+}
+
+/* ==================== 全局样式 ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%);
+    min-height: 100vh;
+    color: var(--color-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==================== 导航栏 ==================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(15, 12, 41, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    letter-spacing: 4px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: color var(--transition-fast);
+}
+
+.nav-link:hover {
+    color: var(--color-text);
+}
+
+.nav-link.active {
+    color: var(--color-text);
+    font-weight: bold;
+}
+
+/* ==================== 通用 Hero 区域 ==================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+/* ==================== 页面标题 ==================== */
+.page-title {
+    font-size: 3em;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-subtitle {
+    font-size: 1.3em;
+    color: var(--color-secondary);
+    margin-bottom: 60px;
+}
+
+/* ==================== 返回链接 ==================== */
+.back-link {
+    display: inline-block;
+    margin-bottom: 40px;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 1em;
+    transition: all var(--transition-fast);
+}
+
+.back-link:hover {
+    color: var(--color-secondary);
+    transform: translateX(-5px);
+}
+
+/* ==================== 章节标题 ==================== */
+.section-title {
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--color-text-heading);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    margin: 15px auto 0;
+}
+
+.section-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.3), transparent);
+    margin: 80px 0;
+}
+
+/* ==================== 卡片通用样式 ==================== */
+.card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: 40px;
+    transition: all var(--transition-fast);
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-hover);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-icon {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+.card-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+    border: 2px solid rgba(102, 126, 234, 0.4);
+    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.2),
+                inset 0 0 20px rgba(102, 126, 234, 0.05);
+    padding: 8px;
+    transition: all var(--transition-fast);
+}
+
+.card-logo:hover {
+    border-color: rgba(102, 126, 234, 0.7);
+    box-shadow: 0 12px 48px rgba(102, 126, 234, 0.35),
+                inset 0 0 30px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+.card-title {
+    font-size: 1.8em;
+    color: var(--color-text-heading);
+    margin-bottom: 15px;
+}
+
+.card-desc {
+    font-size: 1em;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.card-features {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.card-features li {
+    padding: 10px 0;
+    color: var(--color-text-light);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.95em;
+}
+
+.card-features li:last-child {
+    border-bottom: none;
+}
+
+.card-features li::before {
+    content: '✓ ';
+    color: var(--color-primary);
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+/* ==================== 按钮样式 ==================== */
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+    padding: 15px 40px;
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    font-size: 1.05em;
+    transition: all var(--transition-fast);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+}
+
+/* ==================== 页脚 ==================== */
+.footer {
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+}
+
+.footer p {
+    color: var(--color-text-dim);
+    font-size: 0.9em;
+    margin: 8px 0;
+}
+
+/* ==================== 网格布局 ==================== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==================== 响应式设计 ==================== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        gap: 20px;
+    }
+    
+    .page-title {
+        font-size: 2em;
+    }
+    
+    .page-subtitle {
+        font-size: 1.1em;
+    }
+}
